@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car resale value predictor</title>
+    
+</head>
+
+<body>
+
+    <div class="all" style="color:#010386">
+        <h1>Car Resale Value Predictor</h1><br><br>
+    <div id="wrapper">
+        <form action="{{ url_for('predict')}}" method="post">
+            <section id="left">
+            
+            <h3>Year of Purchase</h3>
+            <input id="first" name="Year" type="number ">
+            <h3>Distance Travelled</h3><input id="third" name="Kms_Driven" required="required">
+            <h3>Showroom Price (in lakhs)</h3><input id="second" name="Present_Price" required="required">
+            
+            <h3>Ownership of the Car (1 to 3)</h3><input id="fourth" name="Owner" required="required"></section>
+            <section id="right">
+            <h3>Fuel type</h3><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <h3><br>Are you a Dealer or an Individual</h3><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3><br>Transmission Type</h3><select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select></section><br></div>
+            <br><br><br><br><button id="sub" type="submit ">Calculate Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3><br>
+    </div>
+
+<style>
+    body {
+    background-color: rgb(190, 255, 255);
+    text-align: center;
+    padding: 0px;
+}
+.all{
+    text-align: center;
+}
+#wrapper{
+    display: flex;
+    text-align: center;
+    padding-left: 34.5%;
+}
+#left{
+    width: 50%;
+    
+
+    float: left;
+}
+#right{
+    width:50%;
+    
+    float: right;
+}
+
+#research {
+    font-size: 18px;
+    width: 100px;
+    height: 23px;
+    top: 23px;
+}
+
+#box {
+    border-radius: 60px;
+    border-color: 45px;
+    border-style: solid;
+    font-family: cursive;
+    text-align: center;
+    background-color: rgb(5, 17, 22);
+    font-size: medium;
+    position: absolute;
+    width: 700px;
+    bottom: 9%;
+    height: 850px;
+    right: 30%;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+}
+
+#fuel {
+    width: 83px;
+    height: 33px;
+    text-align: center;
+    border-radius: 14px;
+    font-size: 20px;
+}
+
+#fuel:hover {
+    background-color: rgb(204, 226, 238);
+}
+
+#research {
+    width: 83px;
+    height: 33px;
+    text-align: center;
+    border-radius: 14px;
+    font-size: 18px;
+}
+
+#research:hover {
+    background-color: rgb(204, 226, 238);
+}
+
+
+#resea {
+    width: 83px;
+    height: 33px;
+    text-align: center;
+    border-radius: 14px;
+    font-size: 20px;
+}
+
+#resea:hover {
+    background-color: rgb(204, 226, 238);
+
+}
+
+#sub {
+    width: 200px;
+    height: 43px;
+    text-align: center;
+    border-radius: 19px;
+    font-size: 18px;
+}
+
+#sub:hover {
+    background-color: rgb(84, 161, 161);
+}
+
+#first {
+    border-radius: 14px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#second {
+    border-radius: 14px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#third {
+    border-radius: 14px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#fourth {
+    border-radius: 14px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+</style>
+
+
+    
+</body>
+
+</html>
